@@ -1,0 +1,115 @@
+{
+   "family": "ecs-cwagent-daemon-service",
+    "containerDefinitions": [
+        {
+            "name": "cloudwatch-agent",
+            "image": "<your custom image>",
+            "cpu": 0,
+            "portMappings": [],
+            "essential": true,
+            "environment": [
+                {
+                    "name": "RUN_IN_CONTAINER",
+                    "value": "True"
+                },
+                {
+                    "name": "NVIDIA_DRIVER_CAPABILITIES",
+                    "value": "all"
+                },
+                {
+                    "name": "NVIDIA_VISIBLE_DEVICES",
+                    "value": "all"
+                }
+            ],
+            "mountPoints": [
+                {
+                    "sourceVolume": "rootfs",
+                    "containerPath": "/rootfs",
+                    "readOnly": true
+                },
+                {
+                    "sourceVolume": "al2_cgroup",
+                    "containerPath": "/sys/fs/cgroup",
+                    "readOnly": true
+                },
+                {
+                    "sourceVolume": "al1_cgroup",
+                    "containerPath": "/cgroup",
+                    "readOnly": true
+                },
+                {
+                    "sourceVolume": "al2_cgroup",
+                    "containerPath": "/rootfs/sys/fs/cgroup",
+                    "readOnly": true
+                },
+                {
+                    "sourceVolume": "al1_cgroup",
+                    "containerPath": "/rootfs/cgroup",
+                    "readOnly": true
+                }
+            ],
+            "volumesFrom": [],
+            "secrets": [
+                {
+                    "name": "CW_CONFIG_CONTENT",
+                    "valueFrom": "ecs-cwagent-daemon-service"
+                }
+            ],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "/ecs/ecs-cwagent-daemon-service",
+                    "mode": "non-blocking",
+                    "awslogs-create-group": "True",
+                    "max-buffer-size": "25m",
+                    "awslogs-region": "<your_region>",
+                    "awslogs-stream-prefix": "ecs"
+                }
+            },
+            "systemControls": []
+        }
+    ],
+    "tags": [
+        {
+            "key": "resourceRequirements",
+            "value": "true"
+        },
+        {
+            "key": "value",
+            "value": "1"
+        },
+        {
+            "key": " type",
+            "value": "GPU"
+        }
+    ],
+    "taskRoleArn": "arn:aws-cn:iam::455385591292:role/CWAgentECSTaskRole",
+    "executionRoleArn": "arn:aws-cn:iam::455385591292:role/CWAgentECSExecutionRole",
+    "networkMode": "host",
+    "volumes": [
+        {
+            "name": "rootfs",
+            "host": {
+                "sourcePath": "/"
+            }
+        },
+        {
+            "name": "al1_cgroup",
+            "host": {
+                "sourcePath": "/cgroup"
+            }
+        },
+        {
+            "name": "al2_cgroup",
+            "host": {
+                "sourcePath": "/sys/fs/cgroup"
+            }
+        }
+    ],
+    "placementConstraints": [],
+    "requiresCompatibilities": [
+        "EC2"
+    ],
+    "cpu": "512",
+    "memory": "256"
+}

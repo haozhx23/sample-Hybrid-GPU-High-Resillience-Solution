@@ -1,0 +1,56 @@
+{
+    "name": "HealthCheckContainer",
+    "image": "public.ecr.aws/t5u4s6i0/hybrid-health-pub:latest",
+    "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+            "awslogs-group": "/ecs/HealthCheckContainerLogs",
+            "mode": "non-blocking",
+            "awslogs-create-group": "true",
+            "max-buffer-size": "25m",
+            "awslogs-region": "cn-north-1",
+            "awslogs-stream-prefix": "ecs"
+        }
+    },
+    "memoryReservation": 8192,
+    "resourceRequirements": [
+        {
+            "value": "8",
+            "type": "GPU"
+        }
+    ],
+    "portMappings": [
+        {
+            "containerPort": 2022,
+            "hostPort": 2022,
+            "protocol": "tcp"
+        }
+    ],
+    "entryPoint": ["/bin/sh"],
+    "command": ["AUTO_FILL"],
+    "mountPoints": [
+        {
+            "sourceVolume": "workspace",
+            "containerPath": "/workspace",
+            "readOnly": false
+        }
+    ],
+    "environment": [],
+    "volumesFrom": [],
+    "linuxParameters": {
+        "devices": [
+            {
+                "hostPath": "/dev/infiniband",
+                "containerPath": "/dev/infiniband",
+                "permissions": [
+                    "read",
+                    "write"
+                ]
+            }
+        ]
+    },
+    "systemControls": [],
+    "essential": true,
+    "privileged": true,
+    "cpu": 0
+}

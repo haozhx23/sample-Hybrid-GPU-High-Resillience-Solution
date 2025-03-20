@@ -1,0 +1,263 @@
+{
+    "widgets": [
+        {
+            "height": 4,
+            "width": 24,
+            "y": 3,
+            "x": 0,
+            "type": "metric",
+            "properties": {
+                "view": "timeSeries",
+                "stacked": false,
+                "metrics": [
+                    [ "NWCD-ECS-Cluster-Monitor", "mem_free", "host", "node032" ],
+                    [ "...", "node004" ],
+                    [ "...", "node035" ],
+                    [ "...", "node001" ],
+                    [ "...", "node002" ],
+                    [ "...", "node029" ]
+                ],
+                "region": "cn-northwest-1"
+            }
+        },
+        {
+            "height": 3,
+            "width": 24,
+            "y": 0,
+            "x": 0,
+            "type": "metric",
+            "properties": {
+                "sparkline": true,
+                "view": "singleValue",
+                "metrics": [
+                    [ "NWCD-ECS-Cluster-Monitor", "cpu_usage_idle", "host", "node004", "cpu", "cpu-total" ],
+                    [ "...", "node001", ".", "." ],
+                    [ "...", "node035", ".", "." ],
+                    [ "...", "node002", ".", "." ],
+                    [ "...", "node029", ".", "." ],
+                    [ "...", "node032", ".", "." ]
+                ],
+                "region": "cn-northwest-1"
+            }
+        },
+        {
+            "height": 5,
+            "width": 4,
+            "y": 7,
+            "x": 0,
+            "type": "metric",
+            "properties": {
+                "metrics": [
+                    [ "NWCD-ECS-Cluster-Monitor", "nvidia_smi_utilization_gpu", "host", "node001", "name", "NVIDIA A800-SXM4-80GB", "index", "0", "arch", "Ampere" ],
+                    [ "...", "4", ".", "." ],
+                    [ "...", "7", ".", "." ],
+                    [ "...", "3", ".", "." ],
+                    [ "...", "6", ".", "." ],
+                    [ "...", "2", ".", "." ],
+                    [ "...", "1", ".", "." ],
+                    [ "...", "5", ".", "." ]
+                ],
+                "view": "timeSeries",
+                "stacked": false,
+                "region": "cn-northwest-1",
+                "stat": "Average",
+                "period": 300,
+                "title": "Node1_GPU_utilization"
+            }
+        },
+        {
+            "height": 5,
+            "width": 4,
+            "y": 7,
+            "x": 4,
+            "type": "metric",
+            "properties": {
+                "view": "timeSeries",
+                "stacked": false,
+                "metrics": [
+                    [ "NWCD-ECS-Cluster-Monitor", "nvidia_smi_utilization_gpu", "host", "node002", "name", "NVIDIA A800-SXM4-80GB", "index", "1", "arch", "Ampere" ],
+                    [ "...", "2", ".", "." ],
+                    [ "...", "7", ".", "." ],
+                    [ "...", "0", ".", "." ],
+                    [ "...", "6", ".", "." ],
+                    [ "...", "5", ".", "." ],
+                    [ "...", "4", ".", "." ],
+                    [ "...", "3", ".", "." ]
+                ],
+                "region": "cn-northwest-1",
+                "title": "Node2_GPU_utilization"
+            }
+        },
+        {
+            "height": 5,
+            "width": 4,
+            "y": 7,
+            "x": 20,
+            "type": "metric",
+            "properties": {
+                "view": "timeSeries",
+                "stacked": false,
+                "metrics": [
+                    [ "NWCD-ECS-Cluster-Monitor", "nvidia_smi_utilization_gpu", "host", "node035", "name", "NVIDIA A800-SXM4-80GB", "index", "0", "arch", "Ampere" ],
+                    [ "...", "4", ".", "." ],
+                    [ "...", "2", ".", "." ],
+                    [ "...", "7", ".", "." ],
+                    [ "...", "5", ".", "." ],
+                    [ "...", "3", ".", "." ],
+                    [ "...", "1", ".", "." ],
+                    [ "...", "6", ".", "." ]
+                ],
+                "region": "cn-northwest-1",
+                "title": "Node35_GPU_utilization"
+            }
+        },
+        {
+            "height": 5,
+            "width": 4,
+            "y": 7,
+            "x": 12,
+            "type": "metric",
+            "properties": {
+                "view": "timeSeries",
+                "stacked": false,
+                "metrics": [
+                    [ "NWCD-ECS-Cluster-Monitor", "nvidia_smi_utilization_gpu", "host", "node029", "name", "NVIDIA A800-SXM4-80GB", "index", "0", "arch", "Ampere" ],
+                    [ "...", "7", ".", "." ],
+                    [ "...", "1", ".", "." ],
+                    [ "...", "2", ".", "." ],
+                    [ "...", "5", ".", "." ],
+                    [ "...", "3", ".", "." ],
+                    [ "...", "6", ".", "." ],
+                    [ "...", "4", ".", "." ]
+                ],
+                "region": "cn-northwest-1",
+                "title": "Node29_GPU_utilization"
+            }
+        },
+        {
+            "height": 5,
+            "width": 4,
+            "y": 7,
+            "x": 16,
+            "type": "metric",
+            "properties": {
+                "view": "timeSeries",
+                "stacked": false,
+                "metrics": [
+                    [ "NWCD-ECS-Cluster-Monitor", "nvidia_smi_utilization_gpu", "host", "node032", "name", "NVIDIA A800-SXM4-80GB", "index", "4", "arch", "Ampere" ],
+                    [ "...", "2", ".", "." ],
+                    [ "...", "1", ".", "." ],
+                    [ "...", "5", ".", "." ],
+                    [ "...", "7", ".", "." ],
+                    [ "...", "3", ".", "." ],
+                    [ "...", "0", ".", "." ],
+                    [ "...", "6", ".", "." ]
+                ],
+                "region": "cn-northwest-1",
+                "title": "Node32_GPU_utilization"
+            }
+        },
+        {
+            "height": 5,
+            "width": 4,
+            "y": 7,
+            "x": 8,
+            "type": "metric",
+            "properties": {
+                "view": "timeSeries",
+                "stacked": false,
+                "metrics": [
+                    [ "NWCD-ECS-Cluster-Monitor", "nvidia_smi_utilization_gpu", "host", "node004", "name", "NVIDIA A800-SXM4-80GB", "index", "7", "arch", "Ampere" ],
+                    [ "...", "5", ".", "." ],
+                    [ "...", "0", ".", "." ],
+                    [ "...", "4", ".", "." ],
+                    [ "...", "2", ".", "." ],
+                    [ "...", "6", ".", "." ],
+                    [ "...", "3", ".", "." ],
+                    [ "...", "1", ".", "." ]
+                ],
+                "region": "cn-northwest-1",
+                "title": "Node4_GPU_utilization"
+            }
+        },
+        {
+            "type": "metric",
+            "x": 0,
+            "y": 12,
+            "width": 8,
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [ "NWCD-ECS-Cluster-Monitor", "diskio_writes", "host", "node004", "name", "sda", { "visible": false, "region": "cn-northwest-1" } ],
+                    [ ".", "diskio_reads", ".", ".", ".", ".", { "region": "cn-northwest-1" } ],
+                    [ ".", "diskio_writes", ".", "node029", ".", ".", { "visible": false, "region": "cn-northwest-1" } ],
+                    [ ".", "diskio_reads", ".", "node002", ".", ".", { "region": "cn-northwest-1" } ],
+                    [ "...", "node029", ".", ".", { "region": "cn-northwest-1" } ],
+                    [ ".", "diskio_writes", ".", "node002", ".", ".", { "visible": false, "region": "cn-northwest-1" } ],
+                    [ "...", "node035", ".", ".", { "visible": false, "region": "cn-northwest-1" } ],
+                    [ ".", "diskio_reads", ".", ".", ".", ".", { "region": "cn-northwest-1" } ],
+                    [ ".", "diskio_writes", ".", "node001", ".", ".", { "visible": false, "region": "cn-northwest-1" } ],
+                    [ ".", "diskio_reads", ".", ".", ".", ".", { "region": "cn-northwest-1" } ],
+                    [ ".", "diskio_writes", ".", "node032", ".", ".", { "visible": false, "region": "cn-northwest-1" } ],
+                    [ ".", "diskio_reads", ".", ".", ".", ".", { "region": "cn-northwest-1" } ]
+                ],
+                "view": "singleValue",
+                "stacked": true,
+                "region": "cn-northwest-1",
+                "stat": "Average",
+                "period": 300,
+                "yAxis": {
+                    "left": {
+                        "min": 0
+                    }
+                },
+                "title": "Rootvlume_diskio_reads"
+            }
+        },
+        {
+            "type": "metric",
+            "x": 8,
+            "y": 12,
+            "width": 8,
+            "height": 6,
+            "properties": {
+                "sparkline": true,
+                "view": "singleValue",
+                "metrics": [
+                    [ "NWCD-ECS-Cluster-Monitor", "diskio_reads", "host", "node004", "name", "sda" ],
+                    [ "...", "node002", ".", "." ],
+                    [ "...", "node029", ".", "." ],
+                    [ "...", "node035", ".", "." ],
+                    [ "...", "node001", ".", "." ],
+                    [ "...", "node032", ".", "." ]
+                ],
+                "region": "cn-northwest-1",
+                "title": "Rootvlume_diskio_reads"
+            }
+        },
+        {
+            "type": "metric",
+            "x": 16,
+            "y": 12,
+            "width": 8,
+            "height": 6,
+            "properties": {
+                "metrics": [
+                    [ { "expression": "SUM(METRICS())", "label": "Fsx_Total_DiskThroughputUtiliztion", "id": "e1" } ],
+                    [ "AWS/FSx", "DiskIopsUtilization", "StorageTargetId", "OST0001", "FileSystemId", "fs-0c8136a9b7e63f88a", { "id": "m1", "visible": false } ],
+                    [ "...", "OST0007", ".", ".", { "id": "m2", "visible": false } ],
+                    [ ".", "FileServerDiskThroughputUtilization", "FileSystemId", "fs-0c8136a9b7e63f88a", "FileServer", "OSS0006", { "id": "m3", "visible": false } ],
+                    [ "...", "OSS0000", { "id": "m4", "visible": false } ],
+                    [ "...", "OSS0002", { "id": "m5", "visible": false } ],
+                    [ "...", "OSS0004", { "id": "m6", "visible": false } ]
+                ],
+                "view": "timeSeries",
+                "stacked": false,
+                "region": "cn-northwest-1",
+                "stat": "Average",
+                "period": 300,
+                "title": "Fsx_Total_DiskThrought"
+            }
+        }
+    ]
+}

@@ -1,0 +1,4 @@
+-i https://pypi.tuna.tsinghua.edu.cn/simple
+gradio>=4.0.0
+pyyaml>=6.0
+boto3

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+curl -Ls https://astral.sh/uv/install.sh | sh
+
+# exec bash -l
+exec $SHELL -l
+
+uv venv --python=python3.10 --seed /fsx/.venv
+source /fsx/.venv/bin/activate
+
+uv pip install -r requirements.txt
+cp frpc_linux_amd64_v0.3 /fsx/.venv/lib/python3.10/site-packages/gradio/
+chmod +x /fsx/.venv/lib/python3.10/site-packages/gradio/frpc_linux_amd64_v0.3

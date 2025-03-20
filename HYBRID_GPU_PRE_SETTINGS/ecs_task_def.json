@@ -1,0 +1,36 @@
+{
+    "family": "ECSHybridGPU",
+    "taskRoleArn": "arn:aws-cn:iam::455385591292:role/ecsanywhereTaskRole",
+    "executionRoleArn": "arn:aws-cn:iam::455385591292:role/ecsanywhereTaskExecutionRole",
+    "networkMode": "host",
+    "ipcMode": "host",
+    "memory": "16384",
+    "containerDefinitions": [],
+    "volumes": [
+        {
+            "name": "workspace",
+            "host": {
+                "sourcePath": "/fsx/hybrid-gpu-console"
+            }
+        },
+        {
+            "name": "healthcheck",
+            "host": {
+                "sourcePath": "/fsx/healthcheck"
+            }
+        },
+        {
+            "name": "ssh-keys",
+            "host": {
+                "sourcePath": "/fsx/.ssh"
+            }
+        }
+    ],
+    "requiresCompatibilities": [
+        "EXTERNAL"
+    ],
+    "runtimePlatform": {
+        "cpuArchitecture": "X86_64",
+        "operatingSystemFamily": "LINUX"
+    }
+}
